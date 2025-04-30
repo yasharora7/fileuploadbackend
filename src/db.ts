@@ -1,22 +1,3 @@
-
-// import mysql from 'mysql2/promise';
-// import dotenv from 'dotenv';
-
-// dotenv.config();
-
-// let db: mysql.Connection;
-
-// export const initDb = async () => {
-//   db = await mysql.createConnection({
-//     host: process.env.DB_HOST!,
-//     user: process.env.DB_USER!,
-//     password: process.env.DB_PASS!,
-//     database: process.env.DB_NAME!,
-//   });
-// };
-
-// export const getDb = () => db;
-
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
 
@@ -45,12 +26,4 @@ export const getDb = () => {
   if (!pool) throw new Error('Database not initialized');
   return pool;
 };
-console.log({
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    host: process.env.DB_HOST,
-  });
-  if (!process.env.DB_USER || !process.env.DB_PASSWORD) {
-    console.warn('⚠️ Missing DB_USER or DB_PASSWORD in .env file');
-  }
-  
+
